@@ -34,7 +34,7 @@ def images2numpy(images, size):
 
 # 이미지에 대한 정보를 나타내주는 함수입니다.
 def sampleVisualize(np_images):
-    fileName = "./data/images/1000092795.jpg"
+    fileName = "./q1/data/images/1000092795.jpg"
 
     ndarray = img.imread(fileName)
 
@@ -61,11 +61,11 @@ def main():
     지시사항1. 이미지 파일 경로를 변경해 이미지를 불러오세요
     이미지 파일은 data 폴더의 images 폴더 안에 있습니다
     """
-    CSV_PATH = "./data/data.csv"
-    IMG_PATH = None
+    CSV_PATH = "./q1/data/data.csv"
+    IMG_PATH = "./q1/data/images/"
 
     """지시사항2. 이미지 크기를 조정하여 절반으로 줄이세요"""
-    IMG_SIZE = (None, None)
+    IMG_SIZE = (150, 150)
     MAX_LEN = 30
     BATCH_SIZE = 2
 

@@ -19,14 +19,14 @@ def create_mask(img, x_range, y_range):
 
 
 def main():
-    img = cv.imread("normal.PNG", cv.IMREAD_GRAYSCALE)
+    img = cv.imread("./q2/normal.PNG", cv.IMREAD_GRAYSCALE)
     height, width = img.shape
 
     """
     지시사항 1. channels 에 적절한 값을 입력하세요.
     실습에서 사용하는 이미지는 gray scale 입니다.
     """
-    channels = None
+    channels =[0]
     
     # 전체 영역에 대한 계산을 수행합니다. (수정 부분 X)
     mask = None
@@ -36,7 +36,7 @@ def main():
     """
     지시사항 2. 모든 그레이 레벨(명암)을 사용하도록 ranges 범위를 조정하세요. 
     """
-    ranges = [None, None]
+    ranges = [0, 256]
 
     # 원래 이미지의 히스토그램을 출력합니다.
     hist_full = create_histogram([img], channels, mask, histSize, ranges)
@@ -46,8 +46,8 @@ def main():
     x_range와 y_range의 범위를 지정하세요.
     이미지의 가로와 세로 크기인 width, height를 활용하세요.
     """
-    x_range = [None, None]
-    y_range = [None, None]
+    x_range = [width//2, width]
+    y_range = [height//2, height]
     
     mask, masked_img = create_mask(img, x_range, y_range)
     
@@ -63,7 +63,8 @@ def main():
     plt.show()
 
     # 엘리스 화면에 그래프를 표시합니다.
-    plt.savefig("masked_graph.png")
+    #plt.savefig("masked_graph.png")
+    plt.show()
     plt.close()
 
     return channels, ranges, x_range, y_range

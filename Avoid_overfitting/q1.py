@@ -20,7 +20,7 @@ def build_mlp_model(img_shape):
     model.add(Input(shape=img_shape))
     
     # TODO: [지시사항 1번] 기본 MLP 모델을 만드세요.
-    model.add(None)
+    model.add(layers.Dense(1024, activation='relu'))
 
     return model
 
@@ -30,7 +30,7 @@ def build_bn_mlp_model(img_shape):
     model.add(Input(shape=img_shape))
     
     # TODO: [지시사항 2번] Batch Normalizatino이 추가된 MLP 모델을 만드세요.
-    model.add(None)
+    model.add(layers.Dense(256, activation='relu'))
 
     return model
 
